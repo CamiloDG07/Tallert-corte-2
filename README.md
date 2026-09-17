@@ -97,4 +97,5 @@ corresponde a un algoritmo estocástico.
 
 ## Autores
 
-Trabajo en parejas — Introducción a la Inteligencia Artificial.
+Mario Jiménez, Juan David Andrade, Camilo Díaz — Introducción a la
+Inteligencia Artificial.
