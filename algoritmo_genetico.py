@@ -171,11 +171,13 @@ def ejecutar_algoritmo_genetico(
         })
 
         if verbose:
+            cromosoma_str = "".join(str(g) for g in mejor_individuo_gen)
             print(
                 f"Gen {generacion:3d} | "
                 f"Aptitud: {mejor_aptitud_gen:6.2f} | "
                 f"Beneficio: {calcular_beneficio(mejor_individuo_gen):3d} "
                 f"| Costo: {calcular_costo(mejor_individuo_gen):3d} | "
+                f"Cromosoma: {cromosoma_str} | "
                 f"Promedio: {aptitud_promedio:6.2f}"
             )
 
