@@ -170,17 +170,47 @@ if __name__ == "__main__":
             f"convergencia_experimento_{nombre}.png",
         )
 
-    # Grafica comparativa de la mejor aptitud entre experimentos
-    plt.figure(figsize=(7, 4.5))
+    # Grafica comparativa de la mejor aptitud entre experimentos.
+    # Se usa escala logaritmica en el eje de generaciones porque la
+    # convergencia ocurre en las primeras generaciones: en escala
+    # lineal las curvas quedan amontonadas contra el eje Y y no se
+    # distinguen. Se marca ademas el punto exacto (generacion,
+    # aptitud) en el que cada experimento alcanzo su mejor solucion.
+    OPTIMO_GLOBAL = 100
+    plt.figure(figsize=(7.5, 4.8))
+    marcadores = {"A": "o", "B": "s", "C": "^"}
+
     for nombre, historial in historiales_exp.items():
-        generaciones = [h["generacion"] for h in historial]
+        generaciones = [h["generacion"] + 1 for h in historial]
         mejor = [h["mejor_aptitud"] for h in historial]
-        plt.plot(generaciones, mejor, label=f"Experimento {nombre}")
-    plt.xlabel("Generacion")
+        mejor_final = mejor[-1]
+        gen_mejor = next(
+            g for g, m in zip(generaciones, mejor) if m == mejor_final
+        )
+        linea, = plt.plot(
+            generaciones, mejor,
+            label=f"Experimento {nombre} (mejor = {mejor_final:.0f})",
+        )
+        plt.scatter(
+            [gen_mejor], [mejor_final],
+            marker=marcadores[nombre], s=70,
+            color=linea.get_color(), zorder=5,
+            edgecolor="black", linewidth=0.6,
+        )
+
+    plt.axhline(
+        OPTIMO_GLOBAL, color="gray", linestyle=":", linewidth=1.2,
+        label="Optimo global (100)",
+    )
+    plt.xscale("log")
+    plt.xlabel("Generacion (escala logaritmica)")
     plt.ylabel("Mejor aptitud")
     plt.title("Comparacion de la mejor aptitud por experimento")
-    plt.legend()
-    plt.grid(alpha=0.3)
+    plt.legend(
+        loc="upper center", bbox_to_anchor=(0.5, -0.18),
+        ncol=2, fontsize=9,
+    )
+    plt.grid(alpha=0.3, which="both")
     plt.tight_layout()
     plt.savefig(
         os.path.join(CARPETA_RESULTADOS, "comparacion_experimentos.png"),

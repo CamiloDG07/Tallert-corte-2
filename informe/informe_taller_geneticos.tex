@@ -93,9 +93,7 @@ $X = (x_1, \dots, x_{10})$, donde cada gen indica la inclusi\'{o}n o
 exclusi\'{o}n del proyecto correspondiente.
 
 \item[e)] \textbf{Tama\~{n}o del espacio de b\'{u}squeda.} Existen
-$2^{10} = 1024$ combinaciones posibles. De estas, 587 cumplen la
-restricci\'{o}n de presupuesto y las 437 restantes son inv\'{a}lidas por
-exceder los 50 puntos de costo.
+$2^{10} = 1024$ combinaciones posibles.
 \end{enumerate}
 
 \textbf{C\'{a}lculo manual.} Para el individuo
@@ -148,7 +146,7 @@ individuo:
 \caption{Poblaci\'{o}n inicial y funci\'{o}n de aptitud (Punto 2)}
 \label{tab:punto2}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lllllll}
+\begin{tabular}{c l l c c c c}
 \toprule
 \textbf{Ind.} & \textbf{Cromosoma} & \textbf{Proyectos} & \textbf{Costo} & \textbf{Beneficio} & \textbf{Aptitud} & \textbf{V\'{a}lido} \\
 \midrule
@@ -267,28 +265,32 @@ inv\'{a}lidos; un valor demasiado grande equivale a descartar de forma
 abrupta cualquier soluci\'{o}n que exceda el presupuesto, reduciendo la
 diversidad disponible para la recombinaci\'{o}n.
 
-\section{Punto 5 -- Experimentaci\'{o}n y an\'{a}lisis}
+\subsection{Punto 4 -- Resultados de la ejecuci\'{o}n completa}
 
-\subsection{Cinco ejecuciones con la configuraci\'{o}n inicial}
+Se ejecut\'{o} el algoritmo cinco veces con la configuraci\'{o}n inicial
+descrita en la tabla anterior, para evidenciar su naturaleza
+estoc\'{a}stica:
 
 \begin{table}[H]
 \centering
 \caption{Cinco ejecuciones con la configuraci\'{o}n inicial}
 \label{tab:punto4}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lllllll}
+\begin{tabular}{c c c l c c c}
 \toprule
 \textbf{Ejec.} & \textbf{Mejor benef.} & \textbf{Costo} & \textbf{Proyectos} & \textbf{Gen. del mejor} & \textbf{Tiempo (s)} & \textbf{Apt. prom. final} \\
 \midrule
-1 & 97 & 50 & P1, P3, P4, P5, P8 & 1  & 0.01041 & 90.85 \\
-2 & 99 & 50 & P1, P3, P4, P6, P9 & 6  & 0.00927 & 89.70 \\
-3 & 99 & 50 & P1, P2, P3, P6, P7 & 10 & 0.00925 & 89.70 \\
-4 & 97 & 50 & P1, P4, P6, P7, P8 & 0  & 0.00928 & 87.05 \\
-5 & 99 & 50 & P1, P2, P3, P6, P7 & 11 & 0.00928 & 88.80 \\
+1 & 97 & 50 & P1, P3, P4, P5, P8 & 1  & 0.00948 & 90.85 \\
+2 & 99 & 50 & P1, P3, P4, P6, P9 & 6  & 0.00904 & 89.70 \\
+3 & 99 & 50 & P1, P2, P3, P6, P7 & 10 & 0.00903 & 89.70 \\
+4 & 97 & 50 & P1, P4, P6, P7, P8 & 0  & 0.00984 & 87.05 \\
+5 & 99 & 50 & P1, P2, P3, P6, P7 & 11 & 0.00982 & 88.80 \\
 \bottomrule
 \end{tabular}%
 }
 \end{table}
+
+\section{Punto 5 -- Experimentaci\'{o}n y an\'{a}lisis}
 
 \subsection{Experimentos A, B y C}
 
@@ -316,6 +318,27 @@ C & 50 & 200 & 0.10 & 100 & 50 & P1, P3, P6, P10     & 1  & 0.05027 \\
     \includegraphics[width=0.85\textwidth]{convergencia_base.png}
     \caption{Convergencia de la configuraci\'{o}n base}
     \label{fig:convergencia-base}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{convergencia_experimento_A.png}
+    \caption{Convergencia del Experimento A}
+    \label{fig:convergencia-a}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{convergencia_experimento_B.png}
+    \caption{Convergencia del Experimento B}
+    \label{fig:convergencia-b}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{convergencia_experimento_C.png}
+    \caption{Convergencia del Experimento C}
+    \label{fig:convergencia-c}
 \end{figure}
 
 \begin{figure}[H]

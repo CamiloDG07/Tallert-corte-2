@@ -1,4 +1,4 @@
 experimento,poblacion,generaciones,mutacion,mejor_beneficio,mejor_costo,proyectos,generacion_mejor,tiempo_s,aptitud_promedio_final
-A,10,50,0.01,93,49,"P1, P5, P8, P9, P10",43,0.00536,89.4
-B,20,100,0.05,100,50,"P1, P3, P6, P10",2,0.01606,90.65
-C,50,200,0.1,100,50,"P1, P3, P6, P10",1,0.08256,76.4
+A,10,50,0.01,93,49,"P1, P5, P8, P9, P10",43,0.00939,89.4
+B,20,100,0.05,100,50,"P1, P3, P6, P10",2,0.03788,90.65
+C,50,200,0.1,100,50,"P1, P3, P6, P10",1,0.20547,76.4
