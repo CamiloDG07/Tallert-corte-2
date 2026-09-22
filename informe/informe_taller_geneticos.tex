@@ -265,7 +265,139 @@ inv\'{a}lidos; un valor demasiado grande equivale a descartar de forma
 abrupta cualquier soluci\'{o}n que exceda el presupuesto, reduciendo la
 diversidad disponible para la recombinaci\'{o}n.
 
-\subsection{Punto 4 -- Resultados de la ejecuci\'{o}n completa}
+\subsection{Punto 4 -- Salida de la ejecuci\'{o}n (traza por generaci\'{o}n)}
+
+Al ejecutar \texttt{algoritmo\_genetico.py} con
+\texttt{verbose=True} sobre la configuraci\'{o}n inicial (poblaci\'{o}n
+20, 100 generaciones, semilla \texttt{random.seed(42)}), el
+algoritmo imprime en cada generaci\'{o}n la mejor aptitud, el
+beneficio y costo de la mejor soluci\'{o}n de esa generaci\'{o}n y la
+aptitud promedio de la poblaci\'{o}n. La salida completa de las 100
+generaciones es la siguiente:
+
+{\footnotesize
+\begin{verbatim}
+Gen   0 | Aptitud:  96.00 | Beneficio:  96 | Costo:  50 | Promedio:  65.95
+Gen   1 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  81.60
+Gen   2 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.30
+Gen   3 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  75.95
+Gen   4 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  77.10
+Gen   5 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  80.70
+Gen   6 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.00
+Gen   7 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.20
+Gen   8 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.40
+Gen   9 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.60
+Gen  10 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.10
+Gen  11 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.80
+Gen  12 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.90
+Gen  13 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  82.55
+Gen  14 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.75
+Gen  15 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.10
+Gen  16 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.15
+Gen  17 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.70
+Gen  18 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.85
+Gen  19 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.15
+Gen  20 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.40
+Gen  21 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.05
+Gen  22 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  82.35
+Gen  23 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.30
+Gen  24 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.35
+Gen  25 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.25
+Gen  26 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.50
+Gen  27 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.60
+Gen  28 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.05
+Gen  29 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.05
+Gen  30 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.60
+Gen  31 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  91.20
+Gen  32 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.10
+Gen  33 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.40
+Gen  34 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.70
+Gen  35 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.45
+Gen  36 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  81.25
+Gen  37 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.55
+Gen  38 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.80
+Gen  39 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.50
+Gen  40 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.75
+Gen  41 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.00
+Gen  42 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  91.10
+Gen  43 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.55
+Gen  44 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  81.05
+Gen  45 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.90
+Gen  46 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.55
+Gen  47 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.25
+Gen  48 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.95
+Gen  49 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.80
+Gen  50 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.05
+Gen  51 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.60
+Gen  52 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.10
+Gen  53 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.15
+Gen  54 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.10
+Gen  55 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.25
+Gen  56 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.15
+Gen  57 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.50
+Gen  58 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.65
+Gen  59 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.10
+Gen  60 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.15
+Gen  61 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.45
+Gen  62 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  81.85
+Gen  63 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  91.20
+Gen  64 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  79.45
+Gen  65 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.25
+Gen  66 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.15
+Gen  67 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.65
+Gen  68 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.55
+Gen  69 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.65
+Gen  70 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  92.05
+Gen  71 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.05
+Gen  72 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  80.65
+Gen  73 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.15
+Gen  74 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.80
+Gen  75 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  91.85
+Gen  76 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.05
+Gen  77 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.00
+Gen  78 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  82.60
+Gen  79 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  78.70
+Gen  80 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.60
+Gen  81 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  89.45
+Gen  82 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.15
+Gen  83 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.20
+Gen  84 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.85
+Gen  85 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  83.60
+Gen  86 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  82.75
+Gen  87 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  85.95
+Gen  88 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.65
+Gen  89 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.40
+Gen  90 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  86.30
+Gen  91 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.65
+Gen  92 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  88.45
+Gen  93 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.90
+Gen  94 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.35
+Gen  95 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.05
+Gen  96 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.80
+Gen  97 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  84.50
+Gen  98 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  87.50
+Gen  99 | Aptitud:  97.00 | Beneficio:  97 | Costo:  50 | Promedio:  90.85
+
+Mejor solucion encontrada:
+Cromosoma: [1, 0, 1, 1, 1, 0, 0, 1, 0, 0]
+Proyectos: ['P1', 'P3', 'P4', 'P5', 'P8']
+Beneficio: 97
+Costo: 50
+Generacion en la que aparecio: 1
+Tiempo de ejecucion: 0.0266 s
+\end{verbatim}
+}
+
+Se observa que el algoritmo encuentra su mejor soluci\'{o}n
+(beneficio 97) desde la generaci\'{o}n 1 y la conserva sin cambios
+durante el resto de la ejecuci\'{o}n gracias al elitismo, mientras que
+la aptitud promedio de la poblaci\'{o}n contin\'{u}a oscilando entre 65 y
+92 aproximadamente, evidenciando que el resto de la poblaci\'{o}n
+sigue explorando el espacio de b\'{u}squeda.
+
+\section{Punto 5 -- Experimentaci\'{o}n y an\'{a}lisis}
+
+\subsection{Cinco ejecuciones con la configuraci\'{o}n inicial}
 
 Se ejecut\'{o} el algoritmo cinco veces con la configuraci\'{o}n inicial
 descrita en la tabla anterior, para evidenciar su naturaleza
@@ -289,8 +421,6 @@ estoc\'{a}stica:
 \end{tabular}%
 }
 \end{table}
-
-\section{Punto 5 -- Experimentaci\'{o}n y an\'{a}lisis}
 
 \subsection{Experimentos A, B y C}
 
